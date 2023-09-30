@@ -19,19 +19,58 @@
     <h1>역사연표</h1><br/>
     <hr/>
     <p style="font-size: 25px;">고1-2 중간 내신대비</p>
-    <!--검색창 구현-->
-    <div class = "search_wrapper">
-      <div class = "mid_wrapper">
-      	<!-- 검색창 -->
-        <input type="text" id = "name" autocomplete="off">
-        <!-- 검색버튼 -->
-        <input type="button" id = "submit_button" value="검색"> 
-      </div>
-      <!-- 추천창 -->
-      <div id="suggestion_box" class = "invisible">
-        <div id = suggested_items></div>
-      </div>
-    </div>
+    <!-- 검색창 -->
+    <body bgcolor="#FFFFFF" text="#000000" link="#0000FF" vlink="#660099" onLoad="if(top.changeAD)top.changeAD()">
+      <a name="top"></a>
+      
+      <h3><font face="Verdana,Arial,Helvetica,sans-serif" color="#000099">
+      본문 검색
+      </font></h3>
+      
+      <form name="f1" action="" onSubmit="if(this.t1.value!=null && this.t1.value!='') findString(this.t1.value);return false">
+          <input type="text" name=t1 value="text" size=20>
+          <input type="submit" name=b1 value="Find">
+      </form>
+      
+      <script language="JavaScript">
+      <!--
+      var TRange=null;
+      
+      function findString (str) {
+       if (parseInt(navigator.appVersion)<4) return;
+       var strFound;
+       if (navigator.appName=="Netscape") {
+      
+        // NAVIGATOR-SPECIFIC CODE
+      
+        strFound=self.find(str);
+        if (!strFound) {
+        strFound=self.find(str,0,1);
+        while (self.find(str,0,1)) continue;
+        }
+       }
+       if (navigator.appName.indexOf("Microsoft")!=-1) {
+      
+        // EXPLORER-SPECIFIC CODE
+      
+        if (TRange!=null) {
+        TRange.collapse(false);
+        strFound=TRange.findText(str);
+        if (strFound) TRange.select();
+        }
+        if (TRange==null || strFound==0) {
+        TRange=self.document.body.createTextRange();
+        strFound=TRange.findText(str);
+        if (strFound) TRange.select();
+        }
+       }
+       if (!strFound) alert ("String '"+str+"' not found!");
+      }
+      //-->
+      </script>
+      
+      찾고 싶은 단어 검색
+      
     <!--내용시작-->
     <p style="background-color: #f7e467; color: black;">1880년대</p>
     <p><blockquote><a href="개항 후 일본상인.html">개항 후 일본 상인</a></blockquote></p>
