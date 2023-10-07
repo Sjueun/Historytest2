@@ -19,6 +19,7 @@
     <h1>역사연표</h1><br/>
     <hr/>
     <p style="font-size: 25px;">고1-2 중간 내신대비</p>
+    <div id="sticky"></div>
     <!-- 검색창 -->
     <body bgcolor="#FFFFFF" text="#000000" link="#0000FF" vlink="#660099" onLoad="if(top.changeAD)top.changeAD()">
       <a name="top"></a>
@@ -26,14 +27,15 @@
       <h3><font face="Verdana,Arial,Helvetica,sans-serif" color="#000099">
       본문 검색
       </font></h3>
+  
+        <form name="f1" action="" onSubmit="if(this.t1.value!=null && this.t1.value!='') findString(this.t1.value);return false">
+        <input type="text" name=t1 value="" size=20>
+        <input type="submit" name=b1 value="검색">
+        <button data-search="next" class="next-btn">∨</button>
+        <button data-search="prev" class="prev-btn">∧</button>
+        </form>
       
-      <form name="f1" action="" onSubmit="if(this.t1.value!=null && this.t1.value!='') findString(this.t1.value);return false">
-          <input type="text" name=t1 value="" size=20>
-          <input type="submit" name=b1 value="검색">
-          <button data-search="next" class="next-btn">∨</button>
-          <button data-search="prev" class="prev-btn">∧</button>
-      </form>
-      
+       
       <script language="JavaScript">
       <!--
       var TRange=null;
